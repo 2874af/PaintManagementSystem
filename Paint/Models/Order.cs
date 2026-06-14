@@ -27,6 +27,7 @@ public class Order
 
     public decimal GetTotalPrice()
     {
-        
+        decimal totalPrice = Product.GetFinalPrice() * Quantity;
+        return totalPrice;
     }
 }
