@@ -8,10 +8,13 @@ public class PaintProduct: IBuyable
     public readonly decimal TaxRate;
     public const decimal DefaultDiscount = 0.05m;
 
+    public static int nextId = 1;
+    public readonly int Id;
     public string Name { get; set; }
     public PaintType Type { get; set; }
     public PaintSpecification Specification { get; set; }
     public decimal Price { get; set; }
+    public PaintBrand Brand { get; set; }
 
     public PaintProduct()
     {
@@ -20,6 +23,10 @@ public class PaintProduct: IBuyable
         Specification = new PaintSpecification();
         Price = 80;  
         TaxRate = 0.1m;
+        Brand = PaintBrand.Dulux;
+
+        Id = nextId;
+        nextId ++;
 
     }
 
@@ -29,7 +36,7 @@ public class PaintProduct: IBuyable
         return finalPrice;
     }
 
-    public void DisplayInfo(PaintProduct paintProduct)
+    public void DisplayInfo()
     {
         Console.WriteLine($"Name: {Name}");
         Console.WriteLine($"Type: {Type}");
