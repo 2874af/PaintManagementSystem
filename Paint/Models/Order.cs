@@ -42,27 +42,11 @@ public class Order
 
     public List<PaintProduct> GetMostExpensivePaintProducts()
     {
-        decimal mostExpensivePrice = Products[0].GetFinalPrice();
+        decimal biggestPrice = Products.Max(product => product.GetFinalPrice());
 
-        foreach (PaintProduct product in Products)
-        {
-            if (product.GetFinalPrice() > mostExpensivePrice)
-            {
-                mostExpensivePrice = product.GetFinalPrice();
-            }
-        }
-
-        List<PaintProduct> MostExpensivePaints = [];
-
-        foreach(PaintProduct product in Products)
-        {
-            if (product.GetFinalPrice() == mostExpensivePrice)
-            {
-                MostExpensivePaints.Add(product);
-            }
-        }
-
-        return MostExpensivePaints;
+        return Products
+            .Where(product => product.GetFinalPrice() == biggestPrice)
+            .ToList();
     }
 
     public void RemoveProduct(int productId)
@@ -80,27 +64,20 @@ public class Order
 
     public List<PaintProduct> FindSpecificPaints(decimal x, decimal y)
     {
-        List<PaintProduct> specificPaints = [];
-        foreach(PaintProduct product in Products)
-        {
-            if (x < product.GetFinalPrice() && product.GetFinalPrice() < y)
-            {
-                specificPaints.Add(product);
-            }
-        }
-
-        return specificPaints;
+        return Products
+            .Where(product => product.GetFinalPrice() > x)
+            .Where(product => product.Price < y)
+            .ToList();
     }
 
     public Dictionary<int, decimal> GetTotalPriceForEachPaint()
     {
-        Dictionary<int, decimal> totalPriceForEachPaint = new Dictionary<int, decimal>();
-
-        for (int i = 0; i < Products.Count; i++)
-        {
-            totalPriceForEachPaint[Products[i].Id] = Products[i].GetFinalPrice() * Quantities[i];
-        }
-
-        return totalPriceForEachPaint;
+        return Products
+            .Select((product, index) => new
+            {
+                Id = product.Id,
+                TotalPrice = product.GetFinalPrice() * Quantities[index]
+            } )
+            .ToDictionary(x => x.Id, x => x.TotalPrice);
     }
 }
