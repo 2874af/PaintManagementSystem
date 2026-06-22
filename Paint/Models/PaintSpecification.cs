@@ -6,6 +6,7 @@ public class PaintSpecification
 {
     public string Color { get; set; }
     public int SizeInLiters { get; set; }
+    public int Id { get; set; }
 
     public PaintSpecification()
     {
