@@ -1,0 +1,15 @@
+/Users/ch10e/PaintManagementSystem/Paint/bin/Debug/net10.0/Paint
+/Users/ch10e/PaintManagementSystem/Paint/bin/Debug/net10.0/Paint.deps.json
+/Users/ch10e/PaintManagementSystem/Paint/bin/Debug/net10.0/Paint.runtimeconfig.json
+/Users/ch10e/PaintManagementSystem/Paint/bin/Debug/net10.0/Paint.dll
+/Users/ch10e/PaintManagementSystem/Paint/bin/Debug/net10.0/Paint.pdb
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/Paint.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/Paint.AssemblyInfoInputs.cache
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/Paint.AssemblyInfo.cs
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/Paint.csproj.CoreCompileInputs.cache
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/Paint.sourcelink.json
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/Paint.dll
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/refint/Paint.dll
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/Paint.pdb
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/Paint.genruntimeconfig.cache
+/Users/ch10e/PaintManagementSystem/Paint/obj/Debug/net10.0/ref/Paint.dll

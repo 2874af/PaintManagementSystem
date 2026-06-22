@@ -1,18 +1,28 @@
 using System;
 using System.Dynamic;
 using System.Linq.Expressions;
+using System.Reflection.Emit;
 
 namespace Paint.Models;
 
 public class User
 {
+    public readonly DateTime CreatedDate;
     public List<Order> OrderHistory { get; set; }
     public List<Payment> PaymentHistory { get; set; }
+    public int Id { get; private set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Phone { get; set; }
 
-    public User(List<Order> orderHistory, List<Payment> paymentHistory)
+    public User(List<Order> orderHistory, List<Payment> paymentHistory, string name, string email, string phone)
     {
         OrderHistory = orderHistory;
         PaymentHistory = paymentHistory;
+        CreatedDate = DateTime.Now;
+        Name = name;
+        Email = email;
+        Phone = phone;
     }
 
     public List<Order> GetMostExpensiveOrders()

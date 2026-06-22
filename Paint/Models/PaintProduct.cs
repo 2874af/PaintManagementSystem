@@ -6,10 +6,9 @@ namespace Paint.Models;
 public class PaintProduct: IBuyable
 {
     public readonly decimal TaxRate;
+    public readonly DateTime CreatedDate;
     public const decimal DefaultDiscount = 0.05m;
-
-    public static int nextId = 1;
-    public readonly int Id;
+    public int Id { get; private set; }
     public string Name { get; set; }
     public PaintType Type { get; set; }
     public PaintSpecification Specification { get; set; }
@@ -24,9 +23,7 @@ public class PaintProduct: IBuyable
         Price = 80;  
         TaxRate = 0.1m;
         Brand = PaintBrand.Dulux;
-
-        Id = nextId;
-        nextId ++;
+        CreatedDate = DateTime.Now;
 
     }
 
