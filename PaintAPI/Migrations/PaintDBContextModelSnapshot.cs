@@ -9,7 +9,7 @@ using PaintAPI.Database;
 
 namespace PaintAPI.Migrations
 {
-    [DbContext(typeof(PaintDBContext))]
+    [DbContext(typeof(PaintDbContext))]
     partial class PaintDBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

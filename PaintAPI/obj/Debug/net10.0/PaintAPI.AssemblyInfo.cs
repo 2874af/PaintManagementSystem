@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PaintAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efa79c238158d961924fd6ef8c5e129c7f1bfb95")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c373458eb8800ef48e10171e1e657368163b25e")]
 [assembly: System.Reflection.AssemblyProductAttribute("PaintAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PaintAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

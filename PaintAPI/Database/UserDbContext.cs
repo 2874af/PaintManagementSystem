@@ -4,16 +4,15 @@ using Paint.Models;
 
 namespace PaintAPI.Database;
 
-public class PaintDbContext: DbContext
+public class UserDbContext: DbContext
 {
     public DbSet<PaintProduct> Paints { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<User> Users { get; set; }
 
-    public PaintDbContext(DbContextOptions<PaintDbContext> dbContextOptions) : base(dbContextOptions)
+    public UserDbContext(DbContextOptions<UserDbContext> dbContextOptions) : base(dbContextOptions)
     {
         
     }
-
 
 }

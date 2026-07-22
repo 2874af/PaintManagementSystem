@@ -1,19 +1,17 @@
 using System;
-using Microsoft.EntityFrameworkCore;
 using Paint.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace PaintAPI.Database;
 
-public class PaintDbContext: DbContext
+public class OrderDbContext: DbContext
 {
     public DbSet<PaintProduct> Paints { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<User> Users { get; set; }
 
-    public PaintDbContext(DbContextOptions<PaintDbContext> dbContextOptions) : base(dbContextOptions)
+    public OrderDbContext(DbContextOptions<OrderDbContext> dbContextOptions) : base(dbContextOptions)
     {
         
     }
-
-
 }

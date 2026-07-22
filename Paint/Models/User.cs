@@ -10,7 +10,7 @@ public class User
     public readonly DateTime CreatedDate;
     public List<Order> OrderHistory { get; set; }
     public List<Payment> PaymentHistory { get; set; }
-    public int Id { get; private set; }
+    public int Id { get; set; }
     public string Name { get; set; }
     public string Email { get; set; }
     public string Phone { get; set; }
