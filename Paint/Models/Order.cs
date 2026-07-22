@@ -6,20 +6,20 @@ namespace Paint.Models;
 public class Order
 {
     public readonly DateTime CreatedAt;
-    public readonly int UserId;
+    public int UserId { get; set; }
 
-    public Dictionary<PaintProduct, int> Products { get; set; }
+    public List<OrderProduct> OrderProducts { get; set; } = new();
     
     public int Id { get; private set; }
 
     public decimal TotalPrice { get; private set; }
 
-    public Order(Dictionary<PaintProduct, int> products, int userId)
+    public Order(int userId, List<OrderProduct> products)
     {
         CreatedAt = DateTime.Now;
-        Products = products;
         TotalPrice = GetTotalPrice();
         UserId = userId;
+        OrderProducts = products;
     }
 
     public void DisplayOrder()
@@ -27,9 +27,9 @@ public class Order
         Console.WriteLine($"Create Time: {CreatedAt}");
         Console.WriteLine($"Total Price: {TotalPrice}");
 
-        foreach (var product in Products)
+        foreach (var product in OrderProducts)
         {
-            Console.WriteLine($"{product.Key} with quantity {product.Value}");
+            Console.WriteLine($"{product.PaintId} with quantity {product.Quantity}");
         }
     }
 
@@ -37,9 +37,9 @@ public class Order
     {
         decimal totalPrice = 0;
         
-        foreach (var product in Products)
+        foreach (var product in OrderProducts)
         {
-            totalPrice += product.Key.GetFinalPrice() * product.Value;
+            totalPrice += product.Paint.GetFinalPrice() * product.Quantity;
         }
 
         return totalPrice;
@@ -47,40 +47,40 @@ public class Order
 
     public List<PaintProduct> GetMostExpensivePaintProducts()
     {
-        decimal biggestPrice = Products.Max(product => product.Key.GetFinalPrice());
+        decimal biggestPrice = OrderProducts.Max(product => product.Paint.GetFinalPrice());
 
-        return Products
-            .Where(product => product.Key.GetFinalPrice() == biggestPrice)
-            .Select(product => product.Key)
+        return OrderProducts
+            .Where(product => product.Paint.GetFinalPrice() == biggestPrice)
+            .Select(product => product.Paint)
             .ToList();
     }
 
     public void RemoveProduct(int productId)
     {
-        foreach (var product in Products)
+        foreach (var product in OrderProducts)
         {
-            if (product.Key.Id == productId)
+            if (product.PaintId == productId)
             {
-                Products.Remove(product.Key);
+                OrderProducts.Remove(product);
             }
         }
     }
 
     public List<PaintProduct> FindSpecificPaints(decimal x, decimal y)
     {
-        return Products
-            .Where(product => product.Key.GetFinalPrice() > x)
-            .Where(product => product.Key.Price < y)
-            .Select(product => product.Key)
+        return OrderProducts
+            .Where(product => product.Paint.GetFinalPrice() > x)
+            .Where(product => product.Paint.GetFinalPrice() < y)
+            .Select(product => product.Paint)
             .ToList();
     }
 
     public Dictionary<PaintProduct, decimal> GetTotalPriceForEachPaint()
     {
-        return Products
+        return OrderProducts
             .ToDictionary(
-                product => product.Key,
-                product => product.Key.GetFinalPrice() * product.Value
+                product => product.Paint,
+                product => product.Paint.GetFinalPrice() * product.Quantity
             );
     }
 }

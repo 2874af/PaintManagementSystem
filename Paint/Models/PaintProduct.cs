@@ -8,12 +8,13 @@ public class PaintProduct: IBuyable
     public readonly decimal TaxRate;
     public readonly DateTime CreatedDate;
     public const decimal DefaultDiscount = 0.05m;
-    public int Id { get; private set; }
+    public int Id { get; set; }
     public string Name { get; set; }
     public PaintType Type { get; set; }
     public PaintSpecification Specification { get; set; }
     public decimal Price { get; set; }
     public PaintBrand Brand { get; set; }
+    public int Stock { get; set; }
 
     public PaintProduct()
     {
@@ -24,6 +25,7 @@ public class PaintProduct: IBuyable
         TaxRate = 0.1m;
         Brand = PaintBrand.Dulux;
         CreatedDate = DateTime.Now;
+        Stock = 0;
 
     }
 
