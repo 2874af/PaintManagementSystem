@@ -130,11 +130,11 @@ namespace PaintAPI.Controllers
             }
 
             var order = new Order
-            (
-                userId: dto.UserId,
-                products: dto.OrderProducts
+            {
+                UserId =  dto.UserId,
+                OrderProducts =  dto.OrderProducts
 
-            );
+            };
 
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();

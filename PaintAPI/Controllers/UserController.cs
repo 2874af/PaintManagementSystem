@@ -28,13 +28,13 @@ namespace PaintAPI.Controllers
                 return BadRequest("This email has Existed.");
             }
 
-            User user = new User(
-                orderHistory: new List<Order>(),
-                paymentHistory: new List<Payment>(),
-                name: dto.Name,
-                email: dto.Email,
-                phone: dto.Phone
-            );
+            User user = new User{
+                OrderHistory =  new List<Order>(),
+                PaymentHistory =  new List<Payment>(),
+                Name = dto.Name,
+                Email = dto.Email,
+                Phone = dto.Phone
+            };
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
