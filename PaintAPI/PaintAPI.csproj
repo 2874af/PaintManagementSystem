@@ -19,6 +19,7 @@
     <Folder Include="Controllers/" />
     <Folder Include="DTOs/" />
     <Folder Include="Interfaces/" />
+    <Folder Include="Migrations/" />
     <Folder Include="Repositories/" />
     <Folder Include="Services/" />
   </ItemGroup>

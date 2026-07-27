@@ -8,22 +8,13 @@ namespace Paint.Models;
 public class User
 {
     public readonly DateTime CreatedDate;
-    public List<Order> OrderHistory { get; set; }
-    public List<Payment> PaymentHistory { get; set; }
+    public List<Order> OrderHistory { get; set; } = new List<Order>();
+    public List<Payment> PaymentHistory { get; set; } = new List<Payment>();
     public int Id { get; set; }
     public string Name { get; set; }
     public string Email { get; set; }
     public string Phone { get; set; }
 
-    public User(List<Order> orderHistory, List<Payment> paymentHistory, string name, string email, string phone)
-    {
-        OrderHistory = orderHistory;
-        PaymentHistory = paymentHistory;
-        CreatedDate = DateTime.Now;
-        Name = name;
-        Email = email;
-        Phone = phone;
-    }
 
     public List<Order> GetMostExpensiveOrders()
     {

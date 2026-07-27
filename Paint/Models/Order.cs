@@ -14,12 +14,10 @@ public class Order
 
     public decimal TotalPrice { get; private set; }
 
-    public Order(int userId, List<OrderProduct> products)
+    public Order()
     {
         CreatedAt = DateTime.Now;
         TotalPrice = GetTotalPrice();
-        UserId = userId;
-        OrderProducts = products;
     }
 
     public void DisplayOrder()

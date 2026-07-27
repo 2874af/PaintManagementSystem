@@ -4,6 +4,7 @@ namespace Paint.Models;
 
 public class OrderProduct
 {
+    public int Id { get; set; }
     public readonly int OrderId;
     public Order Order { get; set; }
     public int PaintId { get; set; }
@@ -11,12 +12,5 @@ public class OrderProduct
     public int Quantity { get; set; }
 
 
-    public OrderProduct(PaintProduct paint, int paintId, int quantity, int orderId, Order order)
-    {
-        PaintId = paintId;
-        Paint = paint;
-        Quantity = quantity;
-        OrderId = orderId;
-        Order = order;
-    }
+
 }

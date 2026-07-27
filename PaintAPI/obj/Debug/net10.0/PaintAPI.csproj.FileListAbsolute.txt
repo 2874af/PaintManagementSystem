@@ -162,3 +162,11 @@
 /Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
 /Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
 /Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/publish/web.config
+/Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/publish/appsettings.Development.json
+/Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/publish/appsettings.json
+/Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/publish/Paint.deps.json
+/Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/publish/Paint.runtimeconfig.json
+/Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/publish/PaintAPI.deps.json
+/Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/publish/PaintAPI.runtimeconfig.json
+/Users/ch10e/PaintManagementSystem/PaintAPI/bin/Debug/net10.0/publish/PaintAPI.staticwebassets.endpoints.json
